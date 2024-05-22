@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">registration practice</string>
+    <string name="tx1">главный экран</string>
+    <string name="tx2">имя</string>
+    <string name="tx4">фамилия</string>
+    <string name="tx6">логин</string>
+    <string name="tx1L2">второй экран</string>
+    <string name="tx2L2L1">Введите данные</string>
+    <string name="tx2Pl1">фамилия</string>
+    <string name="tx2Pl2">имя</string>
+    <string name="tx2Pl3">логин</string>
+    <string name="tx2Pl4">пароль</string>
+    <string name="tx1Pl2l2">введите логин</string>
+    <string name="tx2Pl2l2">введите пароль</string>
+    <string name="bt1">войти</string>
+    <string name="bt2">зарегистрироваться</string>
+    <string name="bt3">выйти</string>
+    <string name="bt1L2L1">зарегистрироваться</string>
+    <string name="bt1L2L2">войти</string>
+</resources>

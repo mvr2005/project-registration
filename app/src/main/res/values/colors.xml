@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="tx1">#DA0F0F</color>
+    <color name="tx1L2">#129337</color>
+</resources>
