@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.mikhail.registrationpractice.databinding.ActivityMainBinding
-import constanс.constanс
+import constanс.Constant
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass : ActivityMainBinding
@@ -46,26 +46,23 @@ class MainActivity : AppCompatActivity() {
             result : ActivityResult ->
                 if (result.resultCode == RESULT_OK) {
 
-                   val textPassword = result.data?.getStringExtra("${constanс.PASSWORD_REG}")
+                   passwordG = result.data?.getStringExtra(Constant.PASSWORD_REG)!!
 
                     bindingClass.la1.visibility = View.VISIBLE
                     bindingClass.la2.visibility = View.GONE
-                    val textLastName = result.data?.getStringExtra("${constanс.LAST_NAME}")
-                    val textName = result.data?.getStringExtra("${constanс.NAME}")
-                    val textLogin = result.data?.getStringExtra("${constanс.LOGIN_REG}")
-                    bindingClass.tx5.text = textLastName.toString()
-                    bindingClass.tx3.text = textName.toString()
-                    bindingClass.tx7.text = textLogin.toString()
+
+                    lastNameG = result.data?.getStringExtra(Constant.LAST_NAME)!!
+                    nameG = result.data?.getStringExtra(Constant.NAME)!!
+                    loginG = result.data?.getStringExtra(Constant.LOGIN_REG)!!
+
+                    bindingClass.tx5.text = lastNameG
+                    bindingClass.tx3.text = nameG
+                    bindingClass.tx7.text = loginG
 
 
                     bindingClass.im1.setImageResource(R.drawable.mic)
 
-                    passwordG = textPassword.toString()
-                    nameG = textName.toString()
-                    lastNameG = textLastName.toString()
-                    loginG = textLogin.toString()
-
-                    Log.d("MyLog1", "$textPassword + $passwordG")
+                    Log.d("MyLog1", passwordG)
                 }
         }
 
@@ -73,18 +70,20 @@ class MainActivity : AppCompatActivity() {
                 result : ActivityResult ->
             if (result.resultCode == RESULT_OK) {
 
-//                val textPassword = result.data?.getStringExtra("$constanс.PASSWORD")
-                val textPasswordReg = result.data?.getStringExtra("${constanс.PASSWORD}")
-                val textLogReg = result.data?.getStringExtra("${constanс.LOGIN}")
+                val textPasswordReg = result.data?.getStringExtra(Constant.PASSWORD)
+                val textLogReg = result.data?.getStringExtra(Constant.LOGIN)
 
                 if(textPasswordReg == passwordG && textLogReg == loginG) {
+
                     bindingClass.la1.visibility = View.VISIBLE
                     bindingClass.la2.visibility = View.GONE
+
                     bindingClass.tx5.text = lastNameG
                     bindingClass.tx3.text = nameG
                     bindingClass.tx7.text = loginG
-                    bindingClass.tx7.text = result.data?.getStringExtra("${constanс.LOGIN}")
+
                     bindingClass.im1.setImageResource(R.drawable.mic)
+
                 } else {
                     bindingClass.la2.visibility = View.GONE
                     bindingClass.la1.visibility = View.GONE
@@ -98,15 +97,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-        fun openRegistration (view : View) {
-           val transitRegistration = Intent(this, ActivityLogIn::class.java)
-            transitRegistration.putExtra("$constanс.KEY", "$constanс.REGISTRATION")
-            startDataRegistration?.launch(transitRegistration)
-        }
+    fun openRegistration (view : View) {
+        val transitRegistration = Intent(this, ActivityLogIn::class.java)
+        transitRegistration.putExtra(Constant.KEY, Constant.REGISTRATION)
+        startDataRegistration?.launch(transitRegistration)
+    }
 
     fun openDataColection (view : View) {
         val transitRegistrat = Intent(this, ActivityLogIn::class.java)
-        transitRegistrat.putExtra("$constanс.KEY", "$constanс.LOG_IN")
+        transitRegistrat.putExtra(Constant.KEY, Constant.LOG_IN)
         startDataColektion?.launch(transitRegistrat)
     }
 

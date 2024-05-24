@@ -8,14 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.mikhail.registrationpractice.databinding.ActivityLogInBinding
-import constanс.constanс
+import constanс.Constant
 
 class ActivityLogIn : AppCompatActivity() {
     lateinit var bindingClass : ActivityLogInBinding
-    lateinit var lastName : String
-//    lateinit var name : String
-    lateinit var login : String
-    lateinit var password : String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,28 +27,28 @@ class ActivityLogIn : AppCompatActivity() {
             insets
         }
 
-         val key1 = intent.getStringExtra("$constanс.KEY")
-        if (key1 == "$constanс.REGISTRATION") {
+         val key1 = intent.getStringExtra(Constant.KEY)
+        if (key1 == Constant.REGISTRATION) {
             bindingClass.la1L2.visibility = View.VISIBLE
-        } else if (key1 == "$constanс.LOG_IN") {
+        } else if (key1 == Constant.LOG_IN) {
             bindingClass.la2L2.visibility = View.VISIBLE
         }
     }
 
         fun resultDataInMainActivity (view : View) {
             val intent = Intent()
-            var lastName = bindingClass.txPl1.text.toString()
-            var name = bindingClass.txPl2.text.toString()
-            var loginReg = bindingClass.txPl3.text.toString()
-            var login = bindingClass.tx1Pl2L2.text.toString()
-            var passwordReg = bindingClass.txPl4.text.toString()
-            var password = bindingClass.tx2Pl2l2.text.toString()
-            intent.putExtra("${constanс.LAST_NAME}", "$lastName")
-            intent.putExtra("${constanс.NAME}", "$name")
-            intent.putExtra("${constanс.LOGIN_REG}", "$loginReg")
-            intent.putExtra("${constanс.LOGIN}", "$login")
-            intent.putExtra("${constanс.PASSWORD_REG}", "$passwordReg")
-            intent.putExtra("${constanс.PASSWORD}", "$password")
+            val lastName = bindingClass.txPl1.text.toString()
+            val name = bindingClass.txPl2.text.toString()
+            val loginReg = bindingClass.txPl3.text.toString()
+            val login = bindingClass.tx1Pl2L2.text.toString()
+            val passwordReg = bindingClass.txPl4.text.toString()
+            val password = bindingClass.tx2Pl2l2.text.toString()
+            intent.putExtra(Constant.LAST_NAME, lastName)
+            intent.putExtra(Constant.NAME, name)
+            intent.putExtra(Constant.LOGIN_REG, loginReg)
+            intent.putExtra(Constant.LOGIN, login)
+            intent.putExtra(Constant.PASSWORD_REG, passwordReg)
+            intent.putExtra(Constant.PASSWORD, password)
             setResult(RESULT_OK, intent)
             finish()
         }
