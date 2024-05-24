@@ -17,4 +17,5 @@
     <string name="bt3">выйти</string>
     <string name="bt1L2L1">зарегистрироваться</string>
     <string name="bt1L2L2">войти</string>
+    <string name="text">неверный логин или пароль</string>
 </resources>

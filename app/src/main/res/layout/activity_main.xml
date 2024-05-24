@@ -98,6 +98,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:onClick="exit"
             android:text="@string/bt3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +110,7 @@
         android:id="@+id/la2"
         android:layout_width="409dp"
         android:layout_height="267dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,6 +121,7 @@
             android:id="@+id/bt1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:onClick="openDataColection"
             android:text="@string/bt1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -130,11 +132,37 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:onClick="openDataColection"
+            android:onClick="openRegistration"
             android:text="@string/bt2"
             app:layout_constraintEnd_toEndOf="@+id/bt1"
             app:layout_constraintStart_toStartOf="@+id/bt1"
             app:layout_constraintTop_toBottomOf="@+id/bt1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/textErr"
+        android:layout_width="404dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tx1"
+        tools:ignore="TextSizeCheck">
+
+        <TextView
+            android:id="@+id/textText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="60sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
